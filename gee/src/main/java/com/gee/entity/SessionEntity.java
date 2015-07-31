@@ -1,5 +1,7 @@
 package com.gee.entity;
 
+import java.util.Date;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -18,9 +20,12 @@ public class SessionEntity extends BaseEntity {
 	private Integer id;
 	@Column
 	private String sessionKey;
-	@ManyToOne
-	@JoinColumn
-	private UserEntity user;
+	@Column
+	private Integer userId;
+	@Column
+	private Date startTime;
+	@Column
+	private Date endTime;
 	
 	public Integer getId() {
 		return id;
@@ -34,12 +39,23 @@ public class SessionEntity extends BaseEntity {
 	public void setSessionKey(String sessionKey) {
 		this.sessionKey = sessionKey;
 	}
-	public UserEntity getUser() {
-		return user;
+	public Integer getUserId() {
+		return userId;
 	}
-	public void setUser(UserEntity user) {
-		this.user = user;
+	public void setUserId(Integer userId) {
+		this.userId = userId;
 	}
-	
+	public Date getStartTime() {
+		return startTime;
+	}
+	public void setStartTime(Date startTime) {
+		this.startTime = startTime;
+	}
+	public Date getEndTime() {
+		return endTime;
+	}
+	public void setEndTime(Date endTime) {
+		this.endTime = endTime;
+	}
 
 }

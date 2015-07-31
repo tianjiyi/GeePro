@@ -1,9 +1,11 @@
-com/gee/config/AppConfig.class
 com/gee/component/UserService.class
-com/gee/config/WebAppInitializer.class
-com/gee/manager/BaseManager.class
 com/gee/controller/UserController.class
 com/gee/entity/UserEntity.class
 com/gee/config/RepositoryConfig.class
+com/gee/config/AppConfig.class
+com/gee/manager/BaseManager.class
+com/gee/config/WebAppInitializer.class
+com/gee/entity/BaseEntity.class
+com/gee/entity/SessionEntity.class
 com/gee/manager/UserManager.class
 com/gee/component/IUserService.class

@@ -7,6 +7,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import org.hibernate.annotations.UpdateTimestamp;
+
 @Entity
 @Table(name = "GEE_USER")
 public class UserEntity extends BaseEntity {
@@ -14,8 +16,10 @@ public class UserEntity extends BaseEntity {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
-	@Column
+	@Column(unique = true, nullable = false)
 	private String userName;
+	@Column(nullable = false)
+	private String password;
 	@Column
 	private String firstName;
 	@Column
@@ -26,7 +30,7 @@ public class UserEntity extends BaseEntity {
 	private String primaryEmail;
 	@Column(name = "alt_email")
 	private String altEmail;
-	
+
 	public String getPrimaryEmail() {
 		return primaryEmail;
 	}
@@ -102,6 +106,14 @@ public class UserEntity extends BaseEntity {
 
 	public void setLocation(String location) {
 		this.location = location;
+	}
+
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
 	}
 
 }
